@@ -1,0 +1,65 @@
+﻿Tim Scheys
+San Francisco, CA | 415-610-9025 
+	Github | 
+Blog | 
+Linkedin |
+Mail |         
+	 github.com/tscheys
+ tscheys.github.io
+ linkedin.com/in/tscheys
+ tim.scheys@gmail.com
+	
+
+Technical Skills
+Strong | JavaScript, D3.js, Backbone.js, AngularJS, Node.js, jQuery, HTML, CSS
+Experienced | Express, MySQL, PostgreSQL, MongoDB, Mocha, Chai, Grunt
+
+
+Projects 
+Thesis Project | Product Owner and Engineer | link
+Description
+* first accomplishment
+* did this
+* done that
+
+
+SF Crime | Product Owner and Engineer | github.com/CrimeVisualizer/USCrimeVisualizer
+Web application that generates an interactive visualization of crimes committed in San Francisco
+* Implemented filter function in D3.js to highlight trends in crime statistics
+* Optimized mongoDB collections improving query performance by over 70%
+* Animated crime data with D3.js based on time of the offense to emphasize frequency and location
+
+
+DiveSpot | Software Engineer | github.com/CrimeVisualizer/DiveStop 
+Yelp-style web app that finds and curates divebars in your neighbourhood 
+* Leveraged Google Places API to supplement PostgreSQL database of user submitted divebars
+* Retrieved dive bar information dynamically to match user position on map improving UX
+* Architected routing between AngularJS front end, Express server and PostgreSQL database
+
+
+WikiGraph | Software Engineer | tscheys.github.io/wiki-graph/
+Web app that displays a higher-order visualization of links between Wikipedia pages
+* Integrated recursive Wikipedia API calls with jQuery to collect and prepare data for visualization
+* Provided user with intermediary page to resolve ambiguity in search terms
+
+
+Professional Experience
+Co-owner | Hotel Warandehof | Belgium | 2011 - Present
+Family and business hotel with a capacity of 26 guests
+* Automated reservation confirmations with a Java application, reducing administration time by over 50%
+* Managed finances and reservations schedule
+
+
+Founder | HotelApp | Belgium | 2012 - 2013
+Web app that allows medium-sized hotels to manage their business
+* Developed web app in jQuery and PHP to provide hotel management services 
+* Elected as 1 of 25 participants to pitch in front of 250 people
+
+
+Education 
+Hack Reactor | Advanced Immersive Software Engineering Program | San Francisco, CA | 2015
+Ghent University | MS in Business Engineering | Belgium | 2010
+
+
+Personal
+Fluent in English, Dutch and French. Avid soccer fan. Likes roadtrips.
