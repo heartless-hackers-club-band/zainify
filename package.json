@@ -1,0 +1,23 @@
+{
+  "name": "zainify",
+  "version": "0.0.1",
+  "description": "I will eat your resume for lunch",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdh3000/zainify.git"
+  },
+  "author": "hackathon crew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hdh3000/zainify/issues"
+  },
+  "homepage": "https://github.com/hdh3000/zainify#readme",
+  "dependencies": {
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3"
+  }
+}
