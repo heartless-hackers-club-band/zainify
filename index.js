@@ -8,16 +8,12 @@ var _ = require('underscore');
 var resume = fs.readFileSync(__dirname + "/resumes/demoResume.txt",'utf8');
 var verbs = nlp.pos(resume).verbs();
 
-
-//read in the resume file
-
-
-// var sections = utils.parseSections(resume);
-
-//test does it include technical skills, * projects, professional experience, education
+var repeateLimit = 10;
+var repeatedVerbs = utils.findRepeatedVerbs(verbs, repeateLimit);
 
 describe('resume fundementals', function () {
 
+  //test does it include technical skills, * projects, professional experience, education
   it('should contain the 7 key sections', function () {
     expect(resume.match(/technical skills/i)).to.not.eql(null);
     expect(resume.match(/strong/i)).to.not.eql(null);
@@ -28,5 +24,15 @@ describe('resume fundementals', function () {
     expect(resume.match(/personal/i)).to.not.eql(null);
   });
 
+  // check for repeated verbs
+  it('should not repeate any verb more than twice', function () {
+    //repeated verbs returns a single word if that word was used over the limit
+    expect(repeatedVerbs).to.be.an('array');
+  });
+
+  it('should not repeate any verb within 5 Lines', function () {
+    //returns true if the verbs are more than 5 lines apart, and the word if the rule is broken
+    expect(utils.checkVerbLineDistance(resume, repeatedVerbs)).to.eql(true);
+  });
 
 });
