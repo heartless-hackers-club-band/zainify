@@ -18,6 +18,8 @@
   "homepage": "https://github.com/hdh3000/zainify#readme",
   "dependencies": {
     "chai": "^3.3.0",
-    "mocha": "^2.3.3"
+    "mocha": "^2.3.3",
+    "nlp_compromise": "^1.1.4",
+    "underscore": "^1.8.3"
   }
 }
