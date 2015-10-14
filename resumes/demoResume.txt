@@ -32,8 +32,7 @@ Web application that generates an interactive visualization of crimes committed 
 
 DiveSpot | Software Engineer | github.com/CrimeVisualizer/DiveStop 
 Yelp-style web app that finds and curates divebars in your neighbourhood 
-* Leveraged Google Places API to supplement PostgreSQL database of user submitted divebars
-* Retrieved dive bar information dynamically to match user position on map improving UX
+* Leveraged Google Places API to supplement PostgreSQL database of user submitted divebars UX
 * Architected routing between AngularJS front end, Express server and PostgreSQL database
 
 

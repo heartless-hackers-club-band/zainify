@@ -1,30 +1,49 @@
 var mocha = require('mocha');
-var chai = require('chai');
 var expect = require('chai').expect;
 var fs = require('fs');
-var nlp_compromise = require('nlp_compromise');
+var nlp = require("nlp_compromise");
 var utils = require('./helpers/utils');
+var _ = require('underscore');
 
-
-//read in the resume file
 var resume = fs.readFileSync(__dirname + "/resumes/demoResume.txt",'utf8');
+var verbs = nlp.pos(resume).verbs();
 
-var sections = utils.parseSections(resume);
+var repeateLimit = 10;
+var repeatedVerbs = utils.findRepeatedVerbs(verbs, repeateLimit);
 
-console.log("-------------------------------------------",sections);  
+describe('Resume', function () {
 
+  describe('Basic Reqs', function () {
+    //test does it include technical skills, * projects, professional experience, education
+    it('should contain the 7 key sections', function () {
+      expect(resume.match(/technical skills/i)).to.not.eql(null);
+      expect(resume.match(/strong/i)).to.not.eql(null);
+      expect(resume.match(/experienced/i)).to.not.eql(null);
+      expect(resume.match(/projects/i)).to.not.eql(null);
+      expect(resume.match(/professional/i)).to.not.eql(null);
+      expect(resume.match(/education/i)).to.not.eql(null);
+      expect(resume.match(/personal/i)).to.not.eql(null);
+    });
 
-//test does it include technical skills, * projects, professional experience, education
+    it('should contain a phone number', function() {
+      var hasPhoneNumber = utils.checkPhoneNumber(resume);
+      expect(hasPhoneNumber).to.equal(true);
+    });
+  });
 
+  describe('Verbs', function () {
+    // check for repeated verbs
+    it('should not be repeated more than twice', function () {
+      //repeated verbs returns a single word if that word was used over the limit
+      expect(repeatedVerbs).to.be.an('array');
+    });
 
-describe('The resume', function() {
-	it('should contain a phone number', function() {
-		var validPhoneNumber = /(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?/;
-		var phoneNumberChecker = function(re, str) {
-		  return re.test(str);
-		}; 
-		var hasPhoneNumber = phoneNumberChecker(validPhoneNumber, sections.top);
-		expect(hasPhoneNumber).to.equal(true);
-	});
+    it('should not be repeated within 5 lines of last use', function () {
+      //returns true if the verbs are more than 5 lines apart, and the word if the rule is broken
+      expect(utils.checkVerbLineDistance(resume, repeatedVerbs)).to.eql(true);
+    });
+  });
 });
+
+
 
